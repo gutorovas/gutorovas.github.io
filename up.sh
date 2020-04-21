@@ -1,0 +1,2 @@
+./upload.github
+./upload.sh
