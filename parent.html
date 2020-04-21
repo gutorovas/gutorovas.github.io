@@ -23,6 +23,35 @@
     function alertCookie() {
 	alert(document.cookie);
     }
+    
+    function reqAccess() {
+    if (document.hasStorageAccess && document.requestStorageAccess) {
+  console.log('On Safari 12');
+  document.hasStorageAccess().then(
+      function successful(hasAccess) {
+        console.log('Testing if hasAccess');
+        if (hasAccess) {
+          console.log('Access granted already');
+        } else {
+          console.log('Requesting access');
+          document.requestStorageAccess().then(
+              function successful() {
+                console.log('Access request was a success');
+                window.location.reload();
+              },
+              function fail() {
+                console.log('Storage Access API call failed...');
+              });
+        }
+      },
+      function rejected(reason) {
+        console.log('hasStorageAccess failed: ', reason);
+      });
+}    
+    }
+    
+    
+    
     </script>
 </head>
 <body>
@@ -34,4 +63,5 @@
     <iframe src="https://mydudac.ecwid.qa/"></iframe>
     <iframe src="https://mydudac.ecwid.qa/cp/"></iframe>
     <button onclick="alertCookie()">Show parent cookies</button>
+    <button onclick="reqAccess()">Request storage access</button>
 </body>
