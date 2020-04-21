@@ -10,8 +10,9 @@
     document.cookie = name + "=" + (value || "")  + expires + "; Secure; SameSite=None";
     }
     setCookie('test_cookie2','1',7);
-    document.cookie = "iframe_1=itest_1; Secure; SameSite=None";
     document.cookie = 'iframe_1=; Max-Age=0'
+    document.cookie = 'iframe_2=; Max-Age=0'
+    document.cookie = "iframe_1=itest_1; Secure; SameSite=None";
     document.cookie = "iframe_2=itest_2; Secure; SameSite=None";
 
     function alertCookie() {
