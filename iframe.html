@@ -10,8 +10,15 @@
     document.cookie = name + "=" + (value || "")  + expires + "; Secure; SameSite=None";
     }
     setCookie('test_cookie2','1',7);
+    document.cookie = "iframe_1=itest_1";
+    document.cookie = "iframe_2=itest_2";
+
+    function alertCookie() {
+	alert(document.cookie);
+    }
     </script>
 </head>
 <body>
-    <div>Page with cookies</div>
+    <div>iframe with cookies</div>
+    <button onclick="alertCookie()">Show parent cookies</button>
 </body>

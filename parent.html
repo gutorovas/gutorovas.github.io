@@ -17,8 +17,8 @@
 //	} else {
 //	    window.alert("Cookies is unavailable");
 //	}
-	    document.cookie = "name=oeschger";
-	    document.cookie = "favorite_food=tripe";
+	    document.cookie = "parent_1=test_1";
+	    document.cookie = "parent_2=test_2";
     });
     function alertCookie() {
 	alert(document.cookie);
@@ -27,5 +27,5 @@
 </head>
 <body>
     <iframe src="https://lamps.ecwid.com/~kruz/cookie/iframe.html"></iframe>
-    <button onclick="alertCookie()">Show cookies</button>
+    <button onclick="alertCookie()">Show parent cookies</button>
 </body>
