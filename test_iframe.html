@@ -53,13 +53,16 @@ function getCookie(cname) {
     }
 
     function showCookie(num) {
-	alert(getCookie('iframe_cookie' + num);
+	alert(getCookie('iframe_cookie' + num));
     }
 
     </script>
 </head>
 <body>
     <div>iframe with cookies</div>
+    <br>
+    <button onclick="alertCookie()">Show all cookies</button><br>
+    <br>
     <button onclick="addCookie(1)">Add iframe cookie-1</button><br>
     <button onclick="delCookie(1)">Delete iframe cookie-1</button><br>
     <button onclick="showCookie(1)">Show iframe cookie-1</button><br>
