@@ -1,0 +1,26 @@
+<head>
+    <script type="text/javascript">
+    function getCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+    	    var c = ca[i];
+    	    while (c.charAt(0)==' ') 
+    		c = c.substring(1,c.length);
+    	    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+    }
+    document.addEventListener("DOMContentLoaded", function() {	
+	document.cookie = "parent_1=test_1";
+	document.cookie = "parent_2=test_2";
+    });
+    function alertCookie() {
+	alert(document.cookie);
+    }
+    </script>
+</head>
+<body>
+    <iframe src="https://lamps.ecwid.com/~kruz/cookie/test_iframe.html"></iframe>
+    <button onclick="alertCookie()">Show parent cookies</button>
+</body>
