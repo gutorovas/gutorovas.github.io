@@ -26,7 +26,7 @@
     
     function reqAccess() {
     if (document.hasStorageAccess && document.requestStorageAccess) {
-  console.log('On Safari 12');
+  console.log('On Browser');
   document.hasStorageAccess().then(
       function successful(hasAccess) {
         console.log('Testing if hasAccess');
@@ -57,7 +57,7 @@
 <body>
     <iframe src="https://lamps.ecwid.com/~kruz/cookie/iframe.html" sandbox="allow-scripts allow-same-origin allow-modals allow-storage-access-by-user-activation"></iframe>
     <!–– <iframe src="https://my.local.ecwid.com:8443/store/121007?inline#dashboard:wizard=tiles"></iframe>
-    <iframe src="https://kruz29511.sandbox.ecwid.com/cp"></iframe>
+    <iframe src="https://kruz29510.sandbox.ecwid.com/cp"></iframe>
     <iframe src="https://my66887v4.ecwid.qa/cp/"></iframe>
     <iframe src="https://my.ecwid.com/cp/"></iframe>
     <iframe src="https://mydudac.ecwid.qa/"></iframe>

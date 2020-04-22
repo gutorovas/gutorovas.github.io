@@ -23,7 +23,7 @@
 
     function reqAccess() {
     if (document.hasStorageAccess && document.requestStorageAccess) {
-  console.log('On Safari 12');
+  console.log('On Browser');
   document.hasStorageAccess().then(
       function successful(hasAccess) {
         console.log('Testing if hasAccess');
