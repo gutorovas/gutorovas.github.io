@@ -21,33 +21,40 @@
 	alert(document.cookie);
     }
 
-    function reqAccess() {
-    if (document.hasStorageAccess && document.requestStorageAccess) {
-  console.log('On Browser');
-  document.hasStorageAccess().then(
-      function successful(hasAccess) {
-        console.log('Testing if hasAccess');
-        if (hasAccess) {
-          console.log('Access granted already');
-        } else {
-          console.log('Requesting access');
-          document.requestStorageAccess().then(
-              function successful() {
-                console.log('Access request was a success');
-                window.location.reload();
-              },
-              function fail() {
-                console.log('Storage Access API call failed...');
-              });
-        }
-      },
-      function rejected(reason) {
-        console.log('hasStorageAccess failed: ', reason);
-      });
-}    
+
+
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+    function addCookie(num) {
+	var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = 'expires=' + date.toUTCString();
+        document.cookie = 'iframe_cookie' + num + ' = ' + num + '; ' + expires + '; Secure; SameSite=None';
     }
 
+    function delCookie(num) {
+	document.cookie = 'iframe_cookie' + num + '=; Max-Age=0'
+    }
 
+    function showCookie(num) {
+	alert(getCookie('iframe_cookie' + num);
+    }
 
     </script>
 </head>
