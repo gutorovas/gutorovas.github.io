@@ -54,7 +54,7 @@ function getCookie(cname) {
 
     function showCookie(num) {
 	var value = getCookie('iframe_cookie' + num);
-	if (value != null) {
+	if (value != '') {
 	    alert('iframe_cookie' + num + " = " + value);
 	}
     }
