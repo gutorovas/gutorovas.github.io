@@ -37,7 +37,7 @@
     function showCookie(num) {
 	var value = getCookie(MYCOOKIE + num);
 	if (value != null && value != '') {
-	    alert('iframe_cookie' + num + " = " + value);
+	    alert(MYCOOKIE + num + " = " + value);
 	} else {
 	    alert('can\'t find iframe_cookie' + num);
 	}	
