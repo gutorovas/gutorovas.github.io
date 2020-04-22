@@ -53,7 +53,10 @@ function getCookie(cname) {
     }
 
     function showCookie(num) {
-	alert(getCookie('iframe_cookie' + num));
+	var value = getCookie('iframe_cookie' + num);
+	if (value != null) {
+	    alert('iframe_cookie' + num + " = " + value);
+	}
     }
 
     </script>
