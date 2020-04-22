@@ -29,10 +29,13 @@
 
     var MYCOOKIE='iframe_cookie_xxx_'
 
-    function addCookie(num) {
+    function addCookie(num, exp) {
 	var date = new Date();
         date.setTime(date.getTime() + (7*24*60*60*1000));
-        expires = 'expires=' + date.toUTCString();
+        var expires = '';
+        if (exp == true) {
+    	    expires = 'expires=' + date.toUTCString();
+        }
         document.cookie = MYCOOKIE + num + ' = ' + num + '; ' + expires + '; Secure; SameSite=None;';
     }
 
@@ -57,15 +60,15 @@
     <button onclick="alertCookie()">Show all cookies</button><br>
     <button onclick="eraseCookieFromAllPaths()">Delete all cookies</button><br>
     <br>
-    <button onclick="addCookie(1)">Add iframe cookie-1</button><br>
+    <button onclick="addCookie(1, true)">Add iframe cookie-1</button><br>
     <button onclick="delCookie(1)">Delete iframe cookie-1</button><br>
     <button onclick="showCookie(1)">Show iframe cookie-1</button><br>
     <br>
-    <button onclick="addCookie(2)">Add iframe cookie-3</button><br>
+    <button onclick="addCookie(2, true)">Add iframe cookie-3</button><br>
     <button onclick="delCookie(2)">Delete iframe cookie-3</button><br>
     <button onclick="showCookie(2)">Show iframe cookie-3</button><br>
     <br>
-    <button onclick="addCookie(3)">Add iframe cookie-3</button><br>
+    <button onclick="addCookie(3, false)">Add iframe cookie-3</button><br>
     <button onclick="delCookie(3)">Delete iframe cookie-3</button><br>
     <button onclick="showCookie(3)">Show iframe cookie-3</button><br>
 </body>
