@@ -29,14 +29,17 @@
 
     var MYCOOKIE='iframe_cookie_xxx_'
 
-    function addCookie(num, exp) {
+    function addCookie(num, same) {
 	var date = new Date();
         date.setTime(date.getTime() + (7*24*60*60*1000));
         var expires = '';
-        if (exp == true) {
-//    	    expires = 'expires=' + date.toUTCString();
+    	expires = 'expires=' + date.toUTCString();
+
+	var same = '';
+        if (same == true) {
+    	    same = '; Secure; SameSite=None;';
         }
-        document.cookie = MYCOOKIE + num + ' = ' + num + '; ' + expires + '; Secure; SameSite=None;';
+        document.cookie = MYCOOKIE + num + ' = ' + num + '; ' + expires + same;
     }
 
     function delCookie(num) {
