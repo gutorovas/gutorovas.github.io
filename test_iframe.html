@@ -34,7 +34,7 @@
         date.setTime(date.getTime() + (7*24*60*60*1000));
         var expires = '';
         if (exp == true) {
-    	    expires = 'expires=' + date.toUTCString();
+//    	    expires = 'expires=' + date.toUTCString();
         }
         document.cookie = MYCOOKIE + num + ' = ' + num + '; ' + expires + '; Secure; SameSite=None;';
     }
