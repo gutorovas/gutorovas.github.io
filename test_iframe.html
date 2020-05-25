@@ -56,34 +56,32 @@
     }
 
     function reqAccess() {
-        let output_log =+ 'User-agent: ' + navigator.userAgent + '\n';
         if (document.hasStorageAccess && document.requestStorageAccess) {
-            output_log += 'Browser has hasStorageAccess and requestStorageAccess methods\n';
+            console.log('Browser has hasStorageAccess and requestStorageAccess methods\n');
             document.hasStorageAccess().then(
                 function successful(hasAccess) {
-                    output_log += 'Checking if hasAccess already granted.... ';
+                    console.log('Checking if hasAccess already granted.... ');
                     if (hasAccess) {
-                        output_log += 'granted already. Exit\n';
+                        console.log('granted already. Exit\n');
                     } else {
-                        output_log += 'not granted yet. Requesting...\n';
+                        console.log('not granted yet. Requesting...\n');
                         document.requestStorageAccess().then(
                             function successful() {
-                                output_log += 'Access request was a success\n';
+                                console.log('Access request was a success\n');
                                 window.location.reload();
                             },
                             function fail() {
-                                output_log += 'Storage Access API call failed\n';
+                                console.log('Storage Access API call failed\n');
                             }
                         );
                     }
                 },
                 function rejected(reason) {
-                    output_log += 'hasStorageAccess failed: ' + reason + '\n';
+                    console.log('hasStorageAccess failed: ' + reason + '\n');
                 });
         } else {
-            output_log += 'Browser has no hasStorageAccess or requestStorageAccess methods' + '\n';
+            console.log('Browser has no hasStorageAccess or requestStorageAccess methods' + '\n');
         }
-        alert(output_log);
     }
     </script>
 </head>
