@@ -56,31 +56,32 @@
     }
 
     function reqAccess() {
-        var output_log = '';
+        var output_log =+ 'User-agent: ' + navigator.userAgent + '\n';
         if (document.hasStorageAccess && document.requestStorageAccess) {
-            output_log =+ 'User-agent: ' + navigator.userAgent + '\n';
+            output_log += 'Browser has hasStorageAccess and requestStorageAccess methods\n';
             document.hasStorageAccess().then(
                 function successful(hasAccess) {
-                    console.log('Testing if hasAccess');
+                    output_log += 'Checking if hasAccess already granted.... ';
                     if (hasAccess) {
-                        console.log('Access granted already');
+                        output_log += 'granted already. Exit\n';
                     } else {
-                        console.log('Requesting access');
+                        output_log += 'not granted yet. Requesting...\n';
                         document.requestStorageAccess().then(
                             function successful() {
-                                console.log('Access request was a success');
+                                output_log += 'Access request was a success\n';
                                 window.location.reload();
                             },
                             function fail() {
-                                console.log('Storage Access API call failed...');
-                            });
+                                output_log += 'Storage Access API call failed\n';
+                            }
+                        );
                     }
                 },
                 function rejected(reason) {
-                    console.log('hasStorageAccess failed: ', reason);
+                    output_log += 'hasStorageAccess failed: ' + reason + '\n';
                 });
         } else {
-
+            output_log += 'Browser has no hasStorageAccess or requestStorageAccess methods' + '\n';
         }
         alert(output_log);
     }
