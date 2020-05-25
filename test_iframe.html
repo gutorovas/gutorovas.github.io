@@ -56,10 +56,9 @@
     }
 
     function reqAccess() {
-        var output_log;
+        var output_log = '';
         if (document.hasStorageAccess && document.requestStorageAccess) {
-            output_log =+ 'On Browser ' + navigator.userAgent;
-            console.log('On Browser ' + navigator.userAgent);
+            output_log =+ 'User-agent: ' + navigator.userAgent + '\n';
             document.hasStorageAccess().then(
                 function successful(hasAccess) {
                     console.log('Testing if hasAccess');
@@ -88,11 +87,10 @@
     </script>
 </head>
 <body>
-    <div>iframe with cookies</div>
     <button onclick="reqAccess()">Request storage access</button>
     <br>
     <br>
-    <br>
+    <div>iframe with cookies</div>
     <button onclick="alertCookie()">Show all cookies</button><br>
     <button onclick="eraseCookieFromAllPaths()">Delete all cookies</button><br>
     <br>
