@@ -1,4 +1,6 @@
 <head>
+    <script type="text/javascript" src="https://lamps.ecwid.com/~kruz/cookie/reqaccess.js"></script>
+
     <script type="text/javascript">
     function setCookie(name,value,days) {
 	var expires = "";
@@ -19,36 +21,8 @@
     document.cookie = "iframe_3=itest_3; Secure; SameSite=None";
 
     function alertCookie() {
-	alert(document.cookie);
+	    alert(document.cookie);
     }
-
-    function reqAccess() {
-    if (document.hasStorageAccess && document.requestStorageAccess) {
-  console.log('On Browser');
-  document.hasStorageAccess().then(
-      function successful(hasAccess) {
-        console.log('Testing if hasAccess');
-        if (hasAccess) {
-          console.log('Access granted already');
-        } else {
-          console.log('Requesting access');
-          document.requestStorageAccess().then(
-              function successful() {
-                console.log('Access request was a success');
-                window.location.reload();
-              },
-              function fail() {
-                console.log('Storage Access API call failed...');
-              });
-        }
-      },
-      function rejected(reason) {
-        console.log('hasStorageAccess failed: ', reason);
-      });
-}    
-    }
-
-
 
     </script>
 </head>
