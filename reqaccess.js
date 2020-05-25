@@ -23,6 +23,6 @@ function reqAccess() {
                 console.log('hasStorageAccess failed: ' + reason + '\n');
             });
     } else {
-        console.log('Browser has no hasStorageAccess or requestStorageAccess methods' + '\n');
+        console.log('Browser has no hasStorageAccess or requestStorageAccess methods\n');
     }
 }
