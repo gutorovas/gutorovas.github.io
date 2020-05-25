@@ -2,57 +2,57 @@
     <script type="text/javascript">
 
     function alertCookie() {
-	alert(document.cookie);
+        alert(document.cookie);
     }
 
     function eraseCookieFromAllPaths() {
-	var c = document.cookie.split("; ");
-	for (i in c) 
-	    document.cookie =/^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";    
+        var c = document.cookie.split("; ");
+        for (i in c)
+            document.cookie =/^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
-    
+
     function getCookie(cname) {
-	var name = cname + "=";
-	var decodedCookie = decodeURIComponent(document.cookie);
-	var ca = decodedCookie.split(';');
-	for(var i = 0; i <ca.length; i++) {
-	    var c = ca[i];
-	    while (c.charAt(0) == ' ') {
-    		c = c.substring(1);
-	    }
-	    if (c.indexOf(name) == 0) {
-    		return c.substring(name.length, c.length);
-	    }
-	}
-	return "";
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
     }
 
     var MYCOOKIE='iframe_cookie_xxx_'
 
     function addCookie(num, same) {
-	var date = new Date();
+        var date = new Date();
         date.setTime(date.getTime() + (7*24*60*60*1000));
         var expires = '';
-    	expires = 'expires=' + date.toUTCString();
+        expires = 'expires=' + date.toUTCString();
 
-	var same = '';
+        var same = '';
         if (same == true) {
-    	    same = '; Secure; SameSite=None;';
+            same = '; Secure; SameSite=None;';
         }
         document.cookie = MYCOOKIE + num + ' = ' + num + '; ' + expires + same;
     }
 
     function delCookie(num) {
-	document.cookie = MYCOOKIE + num + '=; Max-Age=0'
+        document.cookie = MYCOOKIE + num + '=; Max-Age=0'
     }
 
     function showCookie(num) {
-	var value = getCookie(MYCOOKIE + num);
-	if (value != null && value != '') {
-	    alert(MYCOOKIE + num + " = " + value);
-	} else {
-	    alert('can\'t find ' + MYCOOKIE + num);
-	}	
+        var value = getCookie(MYCOOKIE + num);
+        if (value != null && value != '') {
+            alert(MYCOOKIE + num + " = " + value);
+        } else {
+            alert('can\'t find ' + MYCOOKIE + num);
+        }
     }
 
     </script>

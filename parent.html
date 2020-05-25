@@ -1,59 +1,57 @@
 <head>
     <script type="text/javascript">
-    function getCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-    	var c = ca[i];
-    	while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    	if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-    }
-    document.addEventListener("DOMContentLoaded", function() {	
-//	var testCookie = getCookie('test_cookie2');
-//	if (testCookie === '1') {
-//	    window.alert("Cookies is available");
-//	} else {
-//	    window.alert("Cookies is unavailable");
-//	}
-	    document.cookie = "parent_1=test_1";
-	    document.cookie = "parent_2=test_2";
-    });
-    function alertCookie() {
-	alert(document.cookie);
-    }
-    
-    function reqAccess() {
-    if (document.hasStorageAccess && document.requestStorageAccess) {
-  console.log('On Browser');
-  document.hasStorageAccess().then(
-      function successful(hasAccess) {
-        console.log('Testing if hasAccess');
-        if (hasAccess) {
-          console.log('Access granted already');
-        } else {
-          console.log('Requesting access');
-          document.requestStorageAccess().then(
-              function successful() {
-                console.log('Access request was a success');
-                window.location.reload();
-              },
-              function fail() {
-                console.log('Storage Access API call failed...');
-              });
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
         }
-      },
-      function rejected(reason) {
-        console.log('hasStorageAccess failed: ', reason);
-      });
-}    
-    }
-    
-    
-    
+        document.addEventListener("DOMContentLoaded", function() {
+            //	var testCookie = getCookie('test_cookie2');
+            //	if (testCookie === '1') {
+            //	    window.alert("Cookies is available");
+            //	} else {
+            //	    window.alert("Cookies is unavailable");
+            //	}
+            document.cookie = "parent_1=test_1";
+            document.cookie = "parent_2=test_2";
+        });
+        function alertCookie() {
+            alert(document.cookie);
+        }
+
+        function reqAccess() {
+            if (document.hasStorageAccess && document.requestStorageAccess) {
+                console.log('On Browser');
+                document.hasStorageAccess().then(
+                    function successful(hasAccess) {
+                        console.log('Testing if hasAccess');
+                        if (hasAccess) {
+                            console.log('Access granted already');
+                        } else {
+                            console.log('Requesting access');
+                            document.requestStorageAccess().then(
+                                function successful() {
+                                    console.log('Access request was a success');
+                                    window.location.reload();
+                                },
+                                function fail() {
+                                    console.log('Storage Access API call failed...');
+                            });
+                        }
+                    },
+                    function rejected(reason) {
+                        console.log('hasStorageAccess failed: ', reason);
+                });
+            }
+        }
     </script>
 </head>
+
 <body>
     <iframe src="https://lamps.ecwid.com/~kruz/cookie/iframe.html"></iframe>
     <iframe src="https://my.local.ecwid.com:8443/cp"></iframe>
