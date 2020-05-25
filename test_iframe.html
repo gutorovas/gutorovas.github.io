@@ -56,7 +56,7 @@
     }
 
     function reqAccess() {
-        var output_log =+ 'User-agent: ' + navigator.userAgent + '\n';
+        let output_log =+ 'User-agent: ' + navigator.userAgent + '\n';
         if (document.hasStorageAccess && document.requestStorageAccess) {
             output_log += 'Browser has hasStorageAccess and requestStorageAccess methods\n';
             document.hasStorageAccess().then(
