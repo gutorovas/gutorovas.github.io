@@ -18,7 +18,7 @@
             });
 
             console.log(document.cookie);
-            if (!document.cookie.match(".*fixed.*")) {
+            if (!document.cookie.match("fixed=fixed")) {
                 console.log("redirected");
                 document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
                 window.location.replace("https://lamps.ecwid.com/~kruz/cookie/safari_iframe.html");
