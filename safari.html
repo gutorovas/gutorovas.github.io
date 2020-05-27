@@ -19,12 +19,8 @@
         });
 
 
-        // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
-        if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
-            // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
-            document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
-            window.location.replace("https://lamps.ecwid.com/~kruz/cookie/safari_iframe.html");
-        }
+        document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
+        window.location.replace("https://lamps.ecwid.com/~kruz/cookie/safari_iframe.html");
     </script>
 </head>
 
