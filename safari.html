@@ -2,6 +2,20 @@
     <script type="text/javascript" src="https://lamps.ecwid.com/~kruz/cookie/reqaccess.js"></script>
 
     <script type="text/javascript">
+        $(document).ready(function () {
+            $(".popup").hide();
+            $(".openpop").click(function (e) {
+                e.preventDefault();
+                $("iframe").attr("src", $(this).attr('href'));
+                $(".links").fadeOut('slow');
+                $(".popup").fadeIn('slow');
+            });
+
+            $(".close").click(function () {
+                $(this).parent().fadeOut("slow");
+                $(".links").fadeIn("slow");
+            });
+        });
     </script>
 </head>
 
@@ -10,4 +24,19 @@
     <br>
     <button onclick="reqAccess()">Request storage access</button>
     <br>
+
+    <div class="links">
+        <a class="openpop" href="http://getbootstrap.com/">Link 1</a>
+        <a class="openpop" href="http://www.jsfiddle.net">Link 2</a>
+        <a class="openpop" href="http://www.w3schools.com">Link 3</a>
+    </div>
+    <div class="wrapper">
+        <div class="popup">
+            <iframe src="">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+            <a href="#" class="close">X</a>
+
+        </div>
+    </div>
 </body>
