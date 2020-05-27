@@ -5,6 +5,11 @@
     </script>
 </head>
 <body>
+    <script>
+        document.cookie = 'safari_cookie_fix=fixed; path=/';
+        window.location.replace(document.referrer);
+    </script>
+
     <div>iframe</div>
     <button onclick="reqAccess()">Request storage access</button>
 </body>
