@@ -16,13 +16,6 @@
                 $(this).parent().fadeOut("slow");
                 $(".links").fadeIn("slow");
             });
-
-            // console.log(document.cookie);
-            // if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
-            //     console.log("redirected");
-            //     document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
-            //     window.location.replace("https://lamps.ecwid.com/~kruz/cookie/safari_iframe.html");
-            // }
         });
 
         function reqReplace() {
@@ -32,14 +25,16 @@
 </head>
 
 <body>
-<!--    <iframe src="https://lamps.ecwid.com/~kruz/cookie/safari_iframe.html"></iframe>-->
+    <a href="https://my.ecwid.com" onclick="window.open(this.href, 'mywin',
+        'toolbar=0,menubar=0,scrollbars=1,height=600,width=720'); return false;">Book online</a>
+    <br>
+    <br>
+    <iframe src="https://lamps.ecwid.com/~kruz/cookie/safari_iframe.html"></iframe>
     <br>
     <button onclick="reqAccess()">Request storage access</button>
     <br>
     <button onclick="reqReplace()">Replace</button>
     <br>
-<a href="https://my.ecwid.com" onclick="window.open(this.href, 'mywin',
-'toolbar=0,menubar=0,scrollbars=1,height=600,width=720'); return false;">Book online</a>
 
     <a href="https://stackoverflow.com/questions/25781628/how-to-load-iframe-content-in-popup-div/25781836">Взято из этого примера</a>
     <div class="links">
