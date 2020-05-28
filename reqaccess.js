@@ -34,9 +34,9 @@ function reqAccess_ecwid() {
             function successful(hasAccess) {
                 if (hasAccess) {
                     console.log('Checking if hasAccess already granted.... granted already. Exit\n');
-                    // window.location.replace("https://my.ecwid.com");
-                    window.parent.open("https://gutorovas.github.io/redirect_page.html", 'mywin',
-                        'toolbar=0,menubar=0,scrollbars=1,height=600,width=720');
+                    window.location.replace("https://my.ecwid.com");
+                    // window.parent.open("https://gutorovas.github.io/redirect_page.html", 'mywin',
+                    //     'toolbar=0,menubar=0,scrollbars=1,height=600,width=720');
                 } else {
                     console.log('Checking if hasAccess already granted.... not granted yet. Requesting...\n');
                     document.requestStorageAccess().then(
