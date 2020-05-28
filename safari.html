@@ -22,10 +22,10 @@
             window.location.replace("https://my.ecwid.com");
         }
 
-        window.onmessage = function(e){
+        window.onmessage = function(e) {
             if (e.data == 'fuck') {
                 console.log("got post message from iframe");
-                window.location.href("https://my.ecwid.com", 'mywin',
+                window.open("https://my.ecwid.com", 'mywin',
                     'toolbar=0,menubar=0,scrollbars=1,height=600,width=720');
                 // alert('It works!');
             }
