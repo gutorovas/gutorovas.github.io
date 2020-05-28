@@ -43,8 +43,8 @@ function reqAccess_ecwid() {
                             window.location.reload();
                         },
                         function fail() {
-                            console.log('Storage Access API call failed3\n');
-                            window.parent.location.open("https://gutorovas.github.io/redirect_page.html", 'mywin',
+                            console.log('Storage Access API call failed4\n');
+                            window.location.open("https://gutorovas.github.io/redirect_page.html", 'mywin',
                                 'toolbar=0,menubar=0,scrollbars=1,height=600,width=720');
                         }
                     );
