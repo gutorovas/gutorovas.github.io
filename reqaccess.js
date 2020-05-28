@@ -34,7 +34,7 @@ function reqAccess_ecwid() {
             function successful(hasAccess) {
                 if (hasAccess) {
                     console.log('Checking if hasAccess already granted.... granted already. Exit\n');
-                    window.location.replace("https://my.ecwid.com");
+                    window.parent.location.replace("https://my.ecwid.com");
                 } else {
                     console.log('Checking if hasAccess already granted.... not granted yet. Requesting...\n');
                     document.requestStorageAccess().then(
