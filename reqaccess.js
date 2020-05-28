@@ -56,6 +56,8 @@ function reqAccess_ecwid() {
             });
     } else {
         console.log('Browser has no hasStorageAccess or requestStorageAccess methods\n');
-        window.location.replace("https://my.ecwid.com");
+        window.open("https://my.ecwid.com", 'mywin',
+            'toolbar=0,menubar=0,scrollbars=1,height=600,width=720');
+        // window.location.replace("https://my.ecwid.com");
     }
 }
