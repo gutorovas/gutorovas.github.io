@@ -52,8 +52,10 @@ function reqAccess_ecwid() {
             },
             function rejected(reason) {
                 console.log('hasStorageAccess failed: ' + reason + '\n');
+                window.location.replace("https://my.ecwid.com");
             });
     } else {
         console.log('Browser has no hasStorageAccess or requestStorageAccess methods\n');
+        window.location.replace("https://my.ecwid.com");
     }
 }
