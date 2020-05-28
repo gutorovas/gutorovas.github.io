@@ -34,7 +34,7 @@ function reqAccess_ecwid() {
             function successful(hasAccess) {
                 if (hasAccess) {
                     console.log('Checking if hasAccess already granted.... granted already. Exit\n');
-                    window.parent.location.replace("https://my.ecwid.com");
+                    window.location.replace("https://my.ecwid.com");
                 } else {
                     console.log('Checking if hasAccess already granted.... not granted yet. Requesting...\n');
                     document.requestStorageAccess().then(
@@ -44,7 +44,7 @@ function reqAccess_ecwid() {
                         },
                         function fail() {
                             console.log('Storage Access API call failed\n');
-                            window.open("https://my.ecwid.com", 'mywin',
+                            window.parent.open("https://my.ecwid.com", 'mywin',
                                 'toolbar=0,menubar=0,scrollbars=1,height=600,width=720');
                         }
                     );
